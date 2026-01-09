@@ -1,0 +1,173 @@
+body{
+background: linear-gradient(138.9deg, #191d17 0%, #121212 98.08%);
+z-index: -1;
+overflow: hidden;
+display: flex;
+flex-direction: row;
+transition: "0.5s ease";
+
+}
+
+.scoreboard{
+    
+    background-color: #ce3030;
+    height: 90vh;
+    width: 33vw;
+    margin: 5vh 0 5vh 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.scoreboard h2{
+    border-radius: 5px;
+    padding: 2vh;
+    background-color: #212121;
+    width: 12vw;
+    height: 3vh;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 3vh;
+}   
+.BEST{
+    border-radius: 5px;
+    padding: 1vh;
+    background-color: #212121;
+    height: 2.5vh;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    position: absolute;
+    top:4.5vh;
+    margin-left: 26vw;
+
+  
+}   
+
+.GAMES{
+    border-radius: 5px;
+    padding: 1vh;
+    background-color: #212121;
+    height: 2.5vh;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    position: absolute;
+    top:4.5vh;
+    margin-right: 27vw;
+  
+}
+.start{    
+
+    background-color: #1a93f7;
+    height: 10vh;
+    width: 15vw;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 3vh;
+
+}
+
+.pole{
+    background-color: rgb(68, 123, 70);
+    width: 80vh;
+    border-radius: 5px;
+    height: 80vh;
+  
+}
+
+.game{
+    margin: 0 5vh 5vh auto;
+    width: 80vh;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+    
+    
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td{
+
+width: 10vh;
+height: 10vh;
+border:5px solid #212121;
+padding: 0;
+margin: 0;
+border-spacing: 0;
+transition: 0.1s ease-in-out;
+box-sizing: border-box;
+
+}
+
+td:hover{
+    background-color: #00cd0a;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+
+.data{
+    background-color: #332222;
+    height: 72vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.data .Time, .data .Clicks, .data .MRT{
+
+    background-color: #ce3030;
+    border-radius: 5px;
+    width: 25vw;
+    height: 17vh;
+    margin-top: 4.4vh;
+    border: 6px solid #212121
+}
+
+.data .Time img, .data .Clicks img, .data .MRT img{
+    width: 12vh;
+    height: 12vh;
+    margin-top: 2vh;
+    margin-left:2vw;
+    border-radius: 5px;
+    ;
+}
+
+.data h1{
+    color: #212121;
+    font-family: sans-serif;
+    margin-left: 10vw;
+    font-size: 20px;
+    margin-top: -12vh;
+    text-align:center;
+}
+
+.data p{
+    color: white;
+    font-family: sans-serif;
+    margin-left: 13.5vw;
+    font-size: 16px;
+    margin-top: 1vh;
+    text-align:center;
+    background-color:  #212121;
+    padding: 0.5vh;
+    width: 8vw;
+    border-radius: 5px;
+}
