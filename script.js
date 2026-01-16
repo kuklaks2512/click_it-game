@@ -1,3 +1,18 @@
+var audio = new Audio("audio/Bg musi.mp3");
+var click = new Audio("audio/click.wav");
+var start = new Audio("audio/start.wav");
+var end = new Audio("audio/end.wav");
+
+audio.play();
+audio.loop = true;
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+        audio.volume = 0; 
+    } else {
+        audio.volume = 1;
+    }
+});
+
 function createTable() {
 // Ця частина зренерована ChatGPT бо я не шарю як зробити інакше
 for (let r = 0; r < 8; r++) {
@@ -39,9 +54,10 @@ let timeoutId;
 function tick1() {
     if (stop1 == false) {
         time1 = time1 + 1.1;
-        gametime.innerHTML = Math.round(time1) / 100;
+        gametime.innerHTML = Math.round(time1) / 100 + "s";
         setTimeout(tick1, 10);
     } if (time2 > 150) {
+        end.play();
         stop1 = true;
         return;
     }
@@ -64,10 +80,11 @@ let startbutton = document.querySelector('.start');
 
     if (game_started == false) {
         
-
+        start.play();
         clicksamount = 0;
         clicks.innerHTML = clicksamount;
-        startbutton.style.backgroundColor = "#0c4069ff";
+        startbutton.style.transition = "0.5s ease";
+        startbutton.style.backgroundColor = "rgba(19, 72, 20, 1)";
         game_started = true; 
         time1 = 0;
         stop1 = false;
@@ -83,6 +100,7 @@ let startbutton = document.querySelector('.start');
 
 
 
+
 function edit_td() {
 
     clearTimeout(timeoutId);
@@ -93,6 +111,7 @@ function edit_td() {
 
     const tdElements = document.querySelectorAll('#myTable td');
     tdElements.forEach(td => {
+        
 
         td.style.backgroundColor = '';
         const newTd = td.cloneNode(true);
@@ -106,16 +125,17 @@ function edit_td() {
 
 
     randomTd.style.transition = "0.5s ease";
-    randomTd.style.backgroundColor = "red";
+    randomTd.style.backgroundColor = "#2fbe49ff";
 
 
     randomTd.addEventListener('click', () => {
+        click.play();
         if (time2 < 150) {
             middletimecontainer.push(time2 / 100);
             console.log(middletimecontainer);
             edit_td(); 
             clicksamount = parseInt(clicksamount) + 1;
-            clicks.innerHTML = clicksamount;
+            clicks.innerHTML = clicksamount ;
         }else{
             stop2 = true;
            
@@ -125,7 +145,7 @@ function edit_td() {
          totalSum += parseFloat(middletimecontainer[i]);
          }
 
-           middletime.innerHTML = Math.round(totalSum.toFixed(2) / middletimecontainer.length * 100) / 100 ; 
+           middletime.innerHTML = Math.round(totalSum.toFixed(2) / middletimecontainer.length * 100) / 100 + "s"; 
              
             gamesamount = gamesamount + 1;
             games.innerHTML = "Games: " + gamesamount;
@@ -133,9 +153,10 @@ function edit_td() {
 
             if (clicksamount > best) {
             best = clicksamount;
-            bestA.innerHTML = "BEST: " + best;
+            bestA.innerHTML = "Best: " + best;
           }
-         startbutton.style.backgroundColor = "#1a93f7";
+         startbutton.style.transition = "0.5s ease";
+         startbutton.style.backgroundColor = "#2e9f31";
          game_started = false
 
          const tdElements = document.querySelectorAll('#myTable td');
