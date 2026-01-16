@@ -1,7 +1,7 @@
-var audio = new Audio("audio/Bg musi.mp3");
-var click = new Audio("audio/click.wav");
-var start = new Audio("audio/start.wav");
-var end = new Audio("audio/end.wav");
+var audio = new Audio("Bg music.mp3");
+var click = new Audio("click.wav");
+var start = new Audio("start.wav");
+var end = new Audio("end.wav");
 
 audio.play();
 audio.loop = true;
